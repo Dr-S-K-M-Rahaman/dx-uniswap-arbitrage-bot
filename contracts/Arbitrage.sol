@@ -5,7 +5,7 @@ import "./IUniswapFactory.sol";
 import "./IDutchExchange.sol";
 import "./ITokenMinimal.sol";
 import "./SafeERC20.sol";
-import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
+import "OpenZeppelin/openzeppelin-contracts/blob/56de324afea13c4649b00ca8c3a3e3535d532bd4/contracts/access/Ownable.sol";
 
 /// @title Uniswap Arbitrage - Executes arbitrage transactions between Uniswap and DutchX.
 /// @author Billy Rennekamp - <billy@gnosis.pm>
