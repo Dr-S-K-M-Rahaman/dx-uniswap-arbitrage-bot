@@ -1,0 +1,21 @@
+# Logs
+logs
+*.log
+npm-debug.log
+yarn-error.log
+
+# Dependency directory
+node_modules
+dapp-module
+installed_contracts
+
+# OSX
+.DS_Store
+
+.env
+.history
+dist
+build
+coverage
+
+coverage.json

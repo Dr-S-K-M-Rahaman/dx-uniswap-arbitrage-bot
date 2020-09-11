@@ -1,0 +1,59 @@
+{
+  "name": "@gnosis.pm/dx-uniswap-arbitrage",
+  "version": "0.1.5",
+  "description": "An Ethereum contract to execute arbitrage functions against DutchX protocol",
+  "scripts": {
+    "rpc": "ganache-cli -d --mnemonic 'grid voyage cream cry fence load stove sort grief fuel room save' --defaultBalanceEther '500000000000000000000'",
+    "test": "truffle test test/*.test.js",
+    "coverage": "npx solidity-coverage",
+    "preversion": "npm run restore",
+    "deploy": "truffle migrate --reset --compile-all",
+    "lint": "solium --dir contracts/",
+    "lint:watch": "solium --watch --dir contracts/",
+    "lint:fix": "solium  --dir contracts/ --fix",
+    "prettier": "prettier --write --tab-width 4 --print-width 140 'contracts/**/*.sol'",
+    "networks-extract": "node src/extract_network_info.js",
+    "networks-inject": "node src/inject_network_info.js",
+    "networks-reset": "mkdir -p build/contracts && npx truffle networks --clean && npm run networks-inject",
+    "compile": "npx truffle compile",
+    "restore": "rm -rf build && npm run compile && npm run networks-reset",
+    "networks": "npx truffle networks",
+    "migrate": "npx truffle migrate --reset --compile-all",
+    "debug": "npx truffle compile --reset --compile-all && npx truffle test test/Debug.js",
+    "install": "cd $INIT_CWD && npm explore truffle -- npm install solc@0.5.2"
+  },
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "@gnosis.pm/util-contracts": "^2.0.0",
+    "bignumber.js": "^8.0.1",
+    "dotenv": "^7.0.0",
+    "ganache-cli": "^6.4.2",
+    "openzeppelin-solidity": "^2.2.0",
+    "prettier": "^1.16.4",
+    "prettier-plugin-solidity-refactor": "^1.0.0-alpha.14",
+    "solidity-coverage": "^0.5.11",
+    "solium": "^1.1.7",
+    "truffle": "^5.0.2",
+    "truffle-hdwallet-provider": "^1.0.8",
+    "verify-on-etherscan": "^1.1.1"
+  },
+  "dependencies": {
+    "@gnosis.pm/mock-contract": "^3.0.7",
+    "solc": "^0.5.2",
+    "web3-provider-engine": "^14.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gnosis/dx-uniswap-arbitrage"
+  },
+  "keywords": [
+    "truffle",
+    "ethereum",
+    "web3"
+  ],
+  "author": "Billy Rennekamp <billy.rennekamp@gmail.com>",
+  "license": "ISC"
+}
